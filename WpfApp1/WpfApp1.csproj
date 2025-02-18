@@ -94,5 +94,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Скриншоты\Неправильный ввод.png" />
+    <Resource Include="Скриншоты\Площадь круга.png" />
+    <Resource Include="Скриншоты\Площадь прямоугольника.png" />
+    <Resource Include="Скриншоты\Площадь треугольника.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
