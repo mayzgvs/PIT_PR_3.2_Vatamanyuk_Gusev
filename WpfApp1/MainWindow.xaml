@@ -1,0 +1,79 @@
+﻿<Window x:Class="AreaCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Площадь фигур" Height="350" Width="600"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style x:Key="InputTextBox" TargetType="TextBox">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style x:Key="RadioButtonStyle" TargetType="RadioButton">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="#2D8CC9"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="ResultLabelStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="ErrorMessageStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="20">
+
+            <TextBlock x:Name="Side1Label" Style="{StaticResource LabelStyle}" Text="1-я сторона:"/>
+            <TextBox Name="Side1" Style="{StaticResource InputTextBox}" />
+
+            <TextBlock x:Name="Side2Label" Style="{StaticResource LabelStyle}" Text="2-я сторона:"/>
+            <TextBox Name="Side2" Style="{StaticResource InputTextBox}" />
+
+            <TextBlock x:Name="Side3Label" Style="{StaticResource LabelStyle}" Text="3-я сторона:"/>
+            <TextBox Name="Side3" Style="{StaticResource InputTextBox}" />
+
+            <TextBlock x:Name="RadiusLabel" Style="{StaticResource LabelStyle}" Text="Радиус:"/>
+            <TextBox Name="Radius" Style="{StaticResource InputTextBox}" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="20">
+            <TextBlock Style="{StaticResource LabelStyle}" Text="Вид фигуры:"/>
+            <RadioButton Name="RectangleRadioButton" Content="Прямоугольник" Style="{StaticResource RadioButtonStyle}" Checked="FigureType_Checked"/>
+            <RadioButton Name="CircleRadioButton" Content="Круг" Style="{StaticResource RadioButtonStyle}" Checked="FigureType_Checked"/>
+            <RadioButton Name="TriangleRadioButton" Content="Треугольник" Style="{StaticResource RadioButtonStyle}" Checked="FigureType_Checked"/>
+
+            <Button Name="CalculateButton" Content="Вычислить" Style="{StaticResource ButtonStyle}" Click="CalculateButton_Click"/>
+
+            <TextBlock Name="ErrorMessage" Style="{StaticResource ErrorMessageStyle}"/>
+            <TextBlock Name="ResultLabel" Style="{StaticResource ResultLabelStyle}" Text="Площадь = "/>
+        </StackPanel>
+    </Grid>
+</Window>
